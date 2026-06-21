@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>乐鱼体育 · 感受运动的节奏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f7f9fc;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      color: #1e2a3a;
+      line-height: 1.7;
+      padding: 2rem 1.2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 0.5rem;
+    }
+    /* ——— hero ——— */
+    .hero {
+      margin-top: 2.2rem;
+      margin-bottom: 3.5rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #0b1a2b;
+      margin-bottom: 0.6rem;
+    }
+    .hero .tagline {
+      font-size: 1.05rem;
+      color: #556475;
+      border-top: 1px solid #d9e1ea;
+      border-bottom: 1px solid #d9e1ea;
+      display: inline-block;
+      padding: 0.5rem 1.2rem;
+      margin-top: 0.3rem;
+      letter-spacing: 0.03em;
+      font-weight: 350;
+    }
+    /* ——— 通用段落 ——— */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 480;
+      margin-bottom: 1.2rem;
+      color: #0f1f30;
+      letter-spacing: -0.01em;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid #e0e8f0;
+    }
+    .text-block {
+      margin-bottom: 2.8rem;
+    }
+    .text-block p {
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+    .text-block p:last-child {
+      margin-bottom: 0;
+    }
+    /* ——— 优势卡片区（极简留白） ——— */
+    .advantage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem 1.5rem;
+      margin-bottom: 2.8rem;
+    }
+    .advantage-item {
+      background: white;
+      padding: 1.4rem 1.2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 20, 40, 0.04);
+      transition: box-shadow 0.18s, transform 0.18s;
+    }
+    .advantage-item:hover {
+      box-shadow: 0 8px 20px rgba(26, 60, 90, 0.06);
+      transform: translateY(-2px);
+    }
+    .advantage-item h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: #152c3f;
+    }
+    .advantage-item p {
+      font-size: 0.92rem;
+      color: #486070;
+      line-height: 1.6;
+    }
+    /* ——— 说明区（加引用感） ——— */
+    .note-box {
+      background: #ffffffdd;
+      backdrop-filter: blur(2px);
+      border-left: 4px solid #9ab0c9;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2.5rem;
+      border-radius: 0 16px 16px 0;
+      font-size: 0.98rem;
+      color: #1f3346;
+    }
+    .note-box strong {
+      font-weight: 500;
+      color: #0a1f30;
+    }
+    /* ——— FAQ 摘要 ——— */
+    .faq-mini {
+      margin-bottom: 2.2rem;
+    }
+    .faq-item {
+      margin-bottom: 1.1rem;
+    }
+    .faq-question {
+      font-weight: 500;
+      color: #0c2236;
+      margin-bottom: 0.15rem;
+      font-size: 1rem;
+    }
+    .faq-answer {
+      color: #3f576b;
+      font-size: 0.94rem;
+      padding-left: 0.3rem;
+      border-left: 2px solid transparent;
+    }
+    /* ——— 底部链接 ——— */
+    .footer-note {
+      margin-top: 3rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #d5dfe9;
+      font-size: 0.92rem;
+      color: #496177;
+      text-align: center;
+      line-height: 1.8;
+    }
+    .footer-note a {
+      color: #1d3f5c;
+      text-decoration: none;
+      border-bottom: 1px solid #b6cbdd;
+      font-weight: 400;
+      transition: border-color 0.2s;
+    }
+    .footer-note a:hover {
+      border-bottom-color: #1d3f5c;
+    }
+    .footer-meta {
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
+      color: #6c839a;
+    }
+    /* ——— 响应式细节 ——— */
+    @media (max-width: 540px) {
+      body {
+        padding: 1.4rem 0.8rem;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .advantage-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .advantage-item {
+        padding: 1.1rem 1rem;
+      }
+      .note-box {
+        padding: 1rem 1.2rem;
+      }
+      .footer-note {
+        font-size: 0.88rem;
+      }
+    }
+    @media (max-width: 400px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .section-title {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>乐鱼体育</h1>
+    <div class="tagline">运动的节奏，清晰可见</div>
+  </div>
+
+  <!-- 引导介绍：从关键词展开主题 -->
+  <div class="text-block">
+    <p>提到体育，我们最先想到的往往是奔跑、跃起、转身——那些身体与时间交织的瞬间。围绕“乐鱼体育”这个关键词展开，你会发现它所关注的并不只是观看，而是一种跟随运动律动的生活方式。从球场边线到日常跑道，体育的魅力在于它不需要太多修饰，就能让人感受到专注与释放。</p>
+    <p>今天的页面想和你分享的，正是这样一种轻松但又鲜活的视角：如何让体育更好地融入我们的日常选择。而<strong>乐鱼体育</strong>所呈现的内容，也恰好呼应了这种节奏感。</p>
+  </div>
+
+  <!-- 优势区：四卡片 -->
+  <div class="advantage-grid">
+    <div class="advantage-item">
+      <h3>视野开阔</h3>
+      <p>赛事信息与运动内容覆盖广泛，从团队项目到个人竞技，总能找到让你心动的节奏。</p>
+    </div>
+    <div class="advantage-item">
+      <h3>界面克制</h3>
+      <p>没有繁杂的弹窗与干扰，信息层级清晰，让注意力始终停留在运动本身。</p>
+    </div>
+    <div class="advantage-item">
+      <h3>社区氛围</h3>
+      <p>用户之间围绕比赛与训练展开讨论，分享真实的体验与建议，而非空洞的数据堆砌。</p>
+    </div>
+    <div class="advantage-item">
+      <h3>场景融合</h3>
+      <p>无论是在通勤路上快速浏览，还是周末沉浸式追踪赛事，都能获得一致的流畅体验。</p>
+    </div>
+  </div>
+
+  <!-- 说明区：内容背后的主题 -->
+  <div class="note-box">
+    <strong>关于主题</strong> —— 体育内容的价值不只在于输赢。在<a href="https://homeweb-leyu.com.cn" style="color:#1d3f5c; text-decoration: underline; text-underline-offset: 2px;">乐鱼体育</a>的语境里，我们更希望传递一种“陪伴感”：当你打开页面，看到的是经过梳理的赛事动态、训练思路或是运动文化片段，而不是被过分渲染的标题。保持温和的阅读节奏，让体育回归日常对话。
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-mini">
+    <div class="section-title">常见问题 · 摘要</div>
+    <div class="faq-item">
+      <div class="faq-question">乐鱼体育适合什么样的用户？</div>
+      <div class="faq-answer">无论你是偶尔关注赛事的轻度爱好者，还是长期保持运动习惯的参与者，都能在这里找到符合自己节奏的内容。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">内容更新频率如何？</div>
+      <div class="faq-answer">围绕主流赛事和运动趋势保持定期更新，同时也会收录一些不那么热门但值得了解的体育故事。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">是否需要注册才能使用？</div>
+      <div class="faq-answer">浏览大部分内容不需要注册，部分互动功能可能需要简单账号，但流程很轻量。</div>
+    </div>
+  </div>
+
+  <!-- 底部链接 & 版权信息 -->
+  <div class="footer-note">
+    <div>了解更多运动生活与赛事信息，欢迎通过 <a href="https://homeweb-leyu.com.cn">乐鱼体育</a> 探索属于你的节奏。</div>
+    <div class="footer-meta">© 乐鱼体育 · 温和地感受体育</div>
+  </div>
+
+</div>
+</body>
+</html>
