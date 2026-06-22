@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>云开体育 · 简明指南与访问提醒</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f6f8;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+      color: #2c3e50;
+      line-height: 1.6;
+      padding: 0 1rem;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 2.5rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+    }
+
+    /* hero 区 */
+    .hero {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 3.2rem 2.8rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.03);
+      border: 1px solid #eef1f4;
+      transition: box-shadow 0.2s;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 520;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.2rem;
+      color: #1a2634;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #4a5a6e;
+      max-width: 620px;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero .meta-note {
+      font-size: 0.95rem;
+      color: #6b7b8c;
+      background: #f0f3f7;
+      display: inline-block;
+      padding: 0.35rem 1rem;
+      border-radius: 40px;
+      border: 1px solid #e2e8ed;
+    }
+
+    /* 通用卡片 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+
+    @media (max-width: 720px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 2rem 2.2rem;
+      border: 1px solid #e9edf2;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .card h2 {
+      font-size: 1.3rem;
+      font-weight: 520;
+      margin-bottom: 0.9rem;
+      color: #1f2b38;
+      border-bottom: 1px solid #f0f3f7;
+      padding-bottom: 0.5rem;
+    }
+
+    .card p, .card li {
+      font-size: 0.97rem;
+      color: #3b4a5a;
+    }
+
+    .card ul {
+      padding-left: 1.3rem;
+      margin-top: 0.5rem;
+    }
+
+    .card li {
+      margin-bottom: 0.45rem;
+    }
+
+    /* 说明区 —— 单栏宽卡片 */
+    .explain-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 2.4rem 2.4rem;
+      border: 1px solid #e9edf2;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .explain-card h2 {
+      font-size: 1.3rem;
+      font-weight: 520;
+      margin-bottom: 1rem;
+      color: #1f2b38;
+    }
+
+    .explain-card p {
+      margin-bottom: 0.9rem;
+    }
+
+    .tip-soft {
+      background: #f7f9fc;
+      padding: 0.9rem 1.3rem;
+      border-radius: 18px;
+      border-left: 4px solid #b0c4d9;
+      font-size: 0.95rem;
+      color: #2c3f53;
+      margin: 1.3rem 0 0.3rem;
+    }
+
+    /* faq摘要 */
+    .faq-mini {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.2rem 1.8rem 1.4rem;
+      border: 1px solid #e9edf2;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 520;
+      font-size: 1.03rem;
+      margin-bottom: 0.3rem;
+      color: #1f2b38;
+    }
+
+    .faq-item p {
+      font-size: 0.95rem;
+      color: #495a6c;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2rem 2.4rem;
+      border: 1px solid #eef1f4;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+      text-align: center;
+    }
+
+    .footer-links p {
+      font-size: 0.96rem;
+      color: #4a5b6e;
+    }
+
+    .footer-links a {
+      color: #1f4e79;
+      text-decoration: none;
+      font-weight: 480;
+      border-bottom: 1px solid #ccdae5;
+      transition: border-color 0.2s, color 0.15s;
+    }
+
+    .footer-links a:hover {
+      color: #0a2d47;
+      border-bottom-color: #1f4e79;
+    }
+
+    .footer-meta {
+      margin-top: 1.2rem;
+      font-size: 0.85rem;
+      color: #7b8a9c;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e2e9ef;
+      margin: 0.6rem 0 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- hero 区 -->
+    <div class="hero">
+      <h1>云开体育 · 简明使用指南</h1>
+      <p class="sub">
+        无论你是初次了解，还是希望更顺畅地使用，这本简短指南都能帮你理清基本路径。
+        同时附上几条实用的访问提醒，减少不必要的周折。
+      </p>
+      <span class="meta-note">基于常见场景整理 · 2025</span>
+    </div>
+
+    <!-- 优势区 + 特点 -->
+    <div class="card-grid">
+      <div class="card">
+        <h2>几个侧重点</h2>
+        <ul>
+          <li>界面直观，功能分区清晰，上手不需要太多时间。</li>
+          <li>内容更新平稳，信息结构相对稳定，适合日常浏览。</li>
+          <li>对主流设备与浏览器的适应性不错，移动端与桌面端体验一致。</li>
+          <li>环境与网络适配方案有基本的文档说明，可减少配置困惑。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>日常使用场景</h2>
+        <ul>
+          <li>快速查阅体育资讯与数据，信息呈现比较直接。</li>
+          <li>关注赛事动态，页面逻辑偏向实用，没有过多干扰元素。</li>
+          <li>适合在碎片时间里获得相对完整的概述，而非零碎推送。</li>
+          <li>可结合个人偏好做简单调整，满足基本的浏览习惯。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 说明区: 从访问提醒角度 -->
+    <div class="explain-card">
+      <h2>一些提醒与建议</h2>
+      <p>
+        使用过程中，有几点值得留意，它们不算复杂，但提前了解能避免临时的小麻烦。
+        首先是网络环境：部分功能或内容的加载可能受地区访问策略影响，
+        如果遇到页面响应偏慢或部分资源无法正常显示，可先检查本地网络设置，
+        或尝试切换连接方式。官方并未提供第三方加速工具，请自行甄别来源。
+      </p>
+      <p>
+        其次是账户与安全：建议通过正规途径注册和使用，不要轻易向任何非官方渠道提供个人信息。
+        如遇到页面提示异常、要求额外验证或下载未知程序，请保持警惕。
+        保持浏览器与系统为较新版本，对整体体验有正面帮助。
+      </p>
+      <div class="tip-soft">
+        📌 提示：如果你不确定当前访问是否顺畅，可以直接前往
+        <a href="https://in-yunkaisports.com" style="color:#1f4e79; text-decoration:underline; text-underline-offset:3px;">云开体育</a>
+        进行简单测试。页面能否正常加载、内容是否完整，是最直接的判断依据。
+      </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+      <div class="faq-item">
+        <strong>云开体育需要额外安装软件吗？</strong>
+        <p>大多数情况下不需要。直接通过现代浏览器访问即可，无需安装任何独立客户端或插件。部分高级交互可能依赖 JavaScript，保持浏览器默认设置即可。</p>
+      </div>
+      <div class="faq-item">
+        <strong>为什么有时候页面载入较慢？</strong>
+        <p>可能与本地网络、CDN 节点或临时维护有关。建议先刷新页面，或稍后再试。如果持续异常，可检查云开体育官方是否有维护公告。非官方社群的信息请谨慎采信。</p>
+      </div>
+      <div class="faq-item">
+        <strong>移动端和电脑端体验差别大吗？</strong>
+        <p>整体设计偏向响应式，核心功能在手机与平板上均可正常使用，字体与按钮大小有适配。极少数复杂表格或数据视图在窄屏上会以滚动方式呈现，不影响主要操作。</p>
+      </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+      <p>
+        更多信息请参考 <a href="https://in-yunkaisports.com">云开体育</a> ——
+        一个提供体育内容与资讯的平台。以上内容仅为概括性指引，具体功能与界面以实际页面为准。
+      </p>
+      <hr>
+      <div class="footer-meta">
+        © 2025 · 指南页 · 仅供参考
+      </div>
+    </div>
+  </div>
+</body>
+</html>
